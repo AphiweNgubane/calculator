@@ -19,21 +19,24 @@ let num2;
 let operator;
 
 const operate = function (num1, operator, num2){
-    if (operator === "add"){
-        add(num1, num2);
+    if (operator === "+"){
+        return add(num1, num2);
     }
 
-    if (operator === "minus"){
-        subtract(num1, num2);
+    if (operator === "-"){
+        return subtract(num1, num2);
     }
 
-    if (operator === "multiply"){
-        multiply(num1, num2);
+    if (operator === "*"){
+        return multiply(num1, num2);
     }
 
-    if (operator === "divide"){
-        divide(num1, num2);
+    if (operator === "/"){
+        return divide(num1, num2);
     }
 }
 
-console.log(operate(5, "add", 2))
+console.log(operate(5, "+", 2))
+console.log(operate(5, "-", 2))
+console.log(operate(5, "*", 2))
+console.log(operate(5, "/", 2))
