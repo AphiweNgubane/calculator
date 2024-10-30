@@ -1,0 +1,43 @@
+body {
+    display:flex;
+    justify-content: center;
+}
+
+#container {
+    background-color: black;
+    padding: 15px;
+    margin-top: 30px;
+    width: 25vw;
+    height: 40vw;
+    display: flex;
+    flex-direction: column;
+}
+
+#display {
+    display: flex;
+    color: white;
+    justify-content: right;
+    align-items: end;
+    padding-top: 20px;
+    height: calc(40% / 2);
+    background-color: grey;
+    font-size: 4vw;
+}
+
+#keys {
+    display: flex;
+    flex-direction: column;
+    background-color: blue;
+    flex: calc(60% / 2);
+    margin-bottom: 10px;
+}
+
+.digits, 
+.signs,
+#equalsKey,
+#clearKey,
+#backspace,
+#percent,
+#point {
+    font-size: 2vw;
+}
