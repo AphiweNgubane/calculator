@@ -5,8 +5,6 @@ body {
 
 #container {
     background-color: black;
-    padding: 15px;
-    margin-top: 30px;
     width: 25vw;
     height: 40vw;
     display: flex;
@@ -26,10 +24,9 @@ body {
 
 #keys {
     display: flex;
-    flex-direction: column;
     background-color: blue;
-    flex: calc(60% / 2);
-    margin-bottom: 10px;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
 }
 
 .digits, 
@@ -40,4 +37,6 @@ body {
 #percent,
 #point {
     font-size: 2vw;
+    width: calc(100% / 4);
 }
+
