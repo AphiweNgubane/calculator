@@ -9,6 +9,10 @@ body {
     height: 40vw;
     display: flex;
     flex-direction: column;
+    padding: 15px;
+    border-radius: 5%;
+    margin-top: 20px;
+    padding-top: 45px;
 }
 
 #display {
@@ -16,17 +20,18 @@ body {
     color: white;
     justify-content: right;
     align-items: end;
-    padding-top: 20px;
-    height: calc(40% / 2);
-    background-color: grey;
+    padding-bottom: 10px;
+    height: 25%;
     font-size: 4vw;
+    font-weight: 500;
 }
 
 #keys {
     display: flex;
-    background-color: blue;
     flex-wrap: wrap;
     flex-direction: row-reverse;
+    height: 75%;
+    padding-bottom: 15px;
 }
 
 .digits, 
@@ -37,6 +42,32 @@ body {
 #percent,
 #point {
     font-size: 2vw;
+    font-weight: 600;
     width: calc(100% / 4);
+    border-radius: 100%;
+    border: 0.5;
 }
 
+#equalsKey {
+    width: calc(100% / 2);
+    border-radius: 40%;
+    color: white;
+    background-color: rgb(255, 145, 0);
+}
+
+#clearKey,
+#backspace,
+#percent {
+    background-color: rgb(185, 185, 185);
+}
+
+.digits,
+#point {
+    background-color: rgba(56, 56, 56, 0.466);
+    color: white;
+}
+
+.signs {
+    color: white;
+    background-color: rgb(255, 145, 0);
+}
