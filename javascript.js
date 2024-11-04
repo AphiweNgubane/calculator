@@ -51,7 +51,15 @@ const handleDigitClick = function (digit){
 const handleOperatorClick = function (op) {
     if (currentNumber !== "") {
         num1 = parseFloat(currentNumber);
-        operator = op;
+
+        if (op === "×") {
+            operator = "*"
+        } else if (op === "÷") {
+            operator = "/";
+        } else {
+            operator = op;
+        }
+        
         currentNumber = "";
         updateDisplay();
     }
