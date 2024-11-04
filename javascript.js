@@ -41,13 +41,11 @@ let currentNumber = "";
 const updateDisplay = function () {
     const display = document.querySelector("#display");
     display.textContent = currentNumber;
-    console.log(display.textContent);
 }
 
 const handleDigitClick = function (digit){
     currentNumber += digit;
     updateDisplay();
-    console.log(currentNumber);
 }
 
 const digitButtons = document.querySelectorAll(".digits");
