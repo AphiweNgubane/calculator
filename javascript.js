@@ -48,7 +48,21 @@ const handleDigitClick = function (digit){
     updateDisplay();
 }
 
+const handleOperatorClick = function (op) {
+    if (currentNumber !== "") {
+        num1 = parseFloat(currentNumber);
+        operator = op;
+        currentNumber = "";
+        updateDisplay();
+    }
+}
+
 const digitButtons = document.querySelectorAll(".digits");
 digitButtons.forEach(button => {
     button.addEventListener("click", () => handleDigitClick(button.textContent));
 })
+
+const operatorButtons = document.querySelectorAll(".signs");
+operatorButtons.forEach(button => {
+    button.addEventListener("click", () => handleOperatorClick(button.textContent));
+});
