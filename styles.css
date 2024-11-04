@@ -71,3 +71,16 @@ body {
     color: white;
     background-color: rgb(255, 145, 0);
 }
+
+.signs:hover,
+#equalsKey:hover {
+    color: rgb(255, 145, 0);
+    background-color: white;
+    cursor: pointer;
+}
+
+.digits:hover,
+#point:hover {
+    background-color: rgba(128, 128, 128, 0.466);
+    cursor: pointer;
+}
