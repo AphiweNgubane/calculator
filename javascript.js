@@ -57,12 +57,27 @@ const handleOperatorClick = function (op) {
     }
 }
 
+const handleEqualsClick = function () {
+    if (num1 !== null && operator !== null && currentNumber !== "") {
+        const num2 = parseFloat (currentNumber);
+        const result = operate(num1, operator, num2);
+        currentNumber = result.toString();
+        updateDisplay();
+
+        num1 = null;
+        operator = null;
+    }
+}
+
 const digitButtons = document.querySelectorAll(".digits");
 digitButtons.forEach(button => {
     button.addEventListener("click", () => handleDigitClick(button.textContent));
-})
+});
 
 const operatorButtons = document.querySelectorAll(".signs");
 operatorButtons.forEach(button => {
     button.addEventListener("click", () => handleOperatorClick(button.textContent));
 });
+
+const equalsButton = document.querySelector("#equalsKey");
+equalsButton.addEventListener("click", handleEqualsClick);
