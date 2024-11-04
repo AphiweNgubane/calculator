@@ -83,6 +83,13 @@ const handleEqualsClick = function () {
     }
 }
 
+const handlePercentageClick = function () {
+    if (currentNumber !== "") {
+        currentNumber = parseFloat(currentNumber / 100).toString();
+        updateDisplay();
+    }
+};
+
 const digitButtons = document.querySelectorAll(".digits");
 digitButtons.forEach(button => {
     button.addEventListener("click", () => handleDigitClick(button.textContent));
@@ -95,3 +102,6 @@ operatorButtons.forEach(button => {
 
 const equalsButton = document.querySelector("#equalsKey");
 equalsButton.addEventListener("click", handleEqualsClick);
+
+const percentageButton = document.querySelector("#percent");
+percentageButton.addEventListener("click", handlePercentageClick);
