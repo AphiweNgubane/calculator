@@ -69,7 +69,7 @@ const handleEqualsClick = function () {
     if (num1 !== null && operator !== null && currentNumber !== "") {
         const num2 = parseFloat (currentNumber);
         const result = operate(num1, operator, num2);
-        currentNumber = result.toString();
+        currentNumber = result.toFixed(5).toString();
         updateDisplay();
 
         num1 = null;
