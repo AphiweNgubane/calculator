@@ -14,9 +14,9 @@ const divide = function (num1, num2){
     return num1 / num2;
 }
 
-let num1;
-let num2;
-let operator;
+let num1 = null;
+let num2 = null;
+let operator = null;
 
 const operate = function (num1, operator, num2){
     if (operator === "+"){
@@ -35,3 +35,22 @@ const operate = function (num1, operator, num2){
         return divide(num1, num2);
     }
 }
+
+let currentNumber = "";
+
+const updateDisplay = function () {
+    const display = document.querySelector("#display");
+    display.textContent = currentNumber;
+    console.log(display.textContent);
+}
+
+const handleDigitClick = function (digit){
+    currentNumber += digit;
+    updateDisplay();
+    console.log(currentNumber);
+}
+
+const digitButtons = document.querySelectorAll(".digits");
+digitButtons.forEach(button => {
+    button.addEventListener("click", () => handleDigitClick(button.textContent));
+})
