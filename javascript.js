@@ -1,18 +1,18 @@
 const add = function (num1, num2){
     return num1 + num2;
-}
+};
 
 const subtract = function (num1, num2){
     return num1 - num2;
-}
+};
 
 const multiply = function (num1, num2){
     return num1 * num2;
-}
+};
 
 const divide = function (num1, num2){
     return num1 / num2;
-}
+};
 
 let num1 = null;
 let num2 = null;
@@ -34,19 +34,19 @@ const operate = function (num1, operator, num2){
     if (operator === "/"){
         return divide(num1, num2);
     }
-}
+};
 
 let currentNumber = "";
 
 const updateDisplay = function () {
     const display = document.querySelector("#display");
     display.textContent = currentNumber;
-}
+};
 
 const handleDigitClick = function (digit){
     currentNumber += digit;
     updateDisplay();
-}
+};
 
 const handleOperatorClick = function (op) {
     if (currentNumber !== "") {
@@ -63,7 +63,7 @@ const handleOperatorClick = function (op) {
         currentNumber = "";
         updateDisplay();
     }
-}
+};
 
 const handleEqualsClick = function () {
     if (num1 !== null && operator !== null && currentNumber !== "") {
@@ -81,11 +81,18 @@ const handleEqualsClick = function () {
         num1 = null;
         operator = null;
     }
-}
+};
 
 const handlePercentageClick = function () {
     if (currentNumber !== "") {
         currentNumber = parseFloat(currentNumber / 100).toString();
+        updateDisplay();
+    }
+};
+
+const handleDecimalClick = function() {
+    if (!currentNumber.includes(".")) {
+        currentNumber += ".";
         updateDisplay();
     }
 };
@@ -105,3 +112,6 @@ equalsButton.addEventListener("click", handleEqualsClick);
 
 const percentageButton = document.querySelector("#percent");
 percentageButton.addEventListener("click", handlePercentageClick);
+
+const decimalButton = document.querySelector("#point");
+decimalButton.addEventListener("click", handleDecimalClick);
