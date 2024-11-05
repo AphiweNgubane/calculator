@@ -97,6 +97,21 @@ const handleDecimalClick = function() {
     }
 };
 
+const handleClearClick = function () {
+    currentNumber = "";
+    num1 = null;
+    operator = null;
+
+    updateDisplay();
+};
+
+const handleBackspaceClick = function (){
+    if (currentNumber.length > 0) {
+        currentNumber = currentNumber.slice(0, -1);
+        updateDisplay();
+    }
+};
+
 const digitButtons = document.querySelectorAll(".digits");
 digitButtons.forEach(button => {
     button.addEventListener("click", () => handleDigitClick(button.textContent));
@@ -115,3 +130,9 @@ percentageButton.addEventListener("click", handlePercentageClick);
 
 const decimalButton = document.querySelector("#point");
 decimalButton.addEventListener("click", handleDecimalClick);
+
+const clearButton = document.querySelector("#clearKey");
+clearButton.addEventListener("click", handleClearClick);
+
+const backspaceButton = document.querySelector("#backspace");
+backspaceButton.addEventListener("click", handleBackspaceClick);
